@@ -1,0 +1,28 @@
+{% from "_render_elements.html" import render_message %} <!--importamos la macro de renderizado de mensajes desde un archivo html-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Client Area</title>
+    <link rel="stylesheet" href={{ url_for('static', filename= 'css/styles.css') }}>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css">
+
+</head>
+
+<body>
+    <form  method="post" action="{{ url_for('client') }}" class="form-box animated fadeInUp">
+        <h1 class="form-title">Ingresa tu MAC</h1>
+            <!--ejecutamos la macro para mostrar los mensajes-->
+            {{ render_message("messages") }}
+        <input type="text" name="mac" placeholder="MAC" autofocus>
+        <input type="text" name="mac2" placeholder="Repeat MAC">
+        <button type="submit">
+            Comenzar
+        </button>
+    </form>
+</body>
+
+</html>

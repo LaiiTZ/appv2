@@ -1,0 +1,50 @@
+{% extends "base.html" %}
+{% from "_render_elements.html" import render_user %} <!--importamos la macro de renderizado de mensajes desde un archivo html-->
+{% block filecss %}
+<link rel="stylesheet" href={{ url_for('static', filename= 'css/index.css') }}>
+{% endblock %}
+{% block content %}
+<div class="index">
+    <header>
+	<div class="container">
+	  <nav class="nav"><img src="../static/imgs/logo.png" class="logo" alt="logo">
+	    <ul>
+		  <li><a href="/FAQ/">FAQ</a></li>
+		  <li><a href="/about-us/">Quienes somos</a></li>
+		  {% with messages = get_flashed_messages(category_filter=["username"]) %}
+		  <!--si hay mensajes-->
+		  {% if messages %}
+		  <!--ciclo for para recorrer toda la lista de mensajes-->
+		  {% for message in messages %}
+		  <li class="username">{{ message }}
+		  {% endfor %}
+		  {% endif %}
+		  {% endwith %}
+		  <ul class="submenu">
+			<li><a href="#" class="leave">Mi cuenta</a></li>
+			<li><a href="/data-view" class="leave">Client Area</a></li>
+			<li><a href="/logout" class="leave">salir</a></li>
+		  </ul>
+		</li>
+	    </ul> 
+	  </nav>
+	</div>
+	</header>
+	<section class="wrapper">
+		<div class="transbox">
+		<div class="main">
+			<article>
+				<div class="text-align-center"><h2>We Are <span>Health & Evolution Center</span></h2></div>
+				<br>
+				<a href="https://wa.me/+5493521423447?text=Me%20gustaria%20saber%20m%C3%A1s%20sobre%20el%20producto">
+					<button class="aboutus">Contact us</button>
+				</a>
+			</div>
+			</article>
+		</section>
+	</div>
+	</section>
+	<footer>
+	</footer>
+	</div>
+	{% endblock %}

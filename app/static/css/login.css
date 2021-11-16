@@ -1,0 +1,99 @@
+body {
+  margin: 0;
+  padding: 0;
+  background: url(../imgs/bg.jpg) no-repeat center top;
+  /* 
+  usamos "no-repeat" para que la imagen no se repita
+  y usamos "center" y "top" para que la imagen este centrada y arriba
+  */
+  background-size: cover;
+  font-family: sans-serif; /*cambiar la fuente*/
+  height: 100vh; /*tamano del 100% del tamanio de la pantalla*/ 
+}
+.msg {
+    /*para que los mensajes de la lista, no parezcan lista*/
+    list-style: none;
+    display: inline-block;
+    margin: 0;
+    padding: 0 0 10px;
+    position: relative;
+}
+.login-box {
+  /*hacemos un recuadro*/
+  width: 320px;
+  height: 420px;
+  /*fondo negro*/
+  background: #000;
+  /*letras blancas*/
+  color: #fff;
+  /*lo centramos*/
+  top: 50%;
+  left: 50%;
+  position: absolute;
+  transform: translate(-50%, -50%);
+  box-sizing: border-box;
+  /*espaciado interno*/
+  padding: 70px 30px;
+}
+.login-box .logo {
+  /*asignamos un tamanio al logo*/
+  width: 100px;
+  height: 90px;
+  /*para que aparezca arriba de todo*/
+  position: absolute;
+  /*para que aparezca en el top*/
+  top: -50px;
+  left: calc(50% - 50px);
+}
+
+.login-box h1 {
+  /*borramos el espaciado y solo dejamos el espaciado hacia abajo*/
+  margin: 0;
+  padding: 0 0 20px;
+  /*centramos el texto*/
+  text-align: center;
+  font-size: 22px;
+}
+
+.login-box label {
+  margin: 0;
+  padding: 0;
+  font-weight: bold;
+  display: block;
+}
+
+.login-box input {
+  padding: 0;
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+.login-box input[type="text"], .login-box input[type="password"] {
+  border: none;
+  border-bottom: 1px solid #fff;
+  background: transparent;
+  outline: none;
+  height: 40px;
+  color: #fff;
+  font-size: 16px;
+}
+
+.login-box input[type="submit"] {
+  border: none;
+  outline: none;
+  height: 40px;
+  background: #b80f22;
+  color: #fff;
+  font-size: 18px;
+  /*para redondear los bordes*/
+  border-radius: 20px;
+}
+.a, .register-redirect {
+  text-decoration: none;
+  font-size: 12px;
+  line-height: 20px;
+  color: darkgrey;
+}
+.register-redirect:hover {
+  color: #fff;
+}

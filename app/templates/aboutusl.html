@@ -1,0 +1,59 @@
+{% extends "base.html" %}
+{% from "_render_elements.html" import render_user %} <!--importamos la macro de renderizado de mensajes desde un archivo html-->
+{% block filecss %}
+<link rel="stylesheet" href={{ url_for('static', filename= 'css/index.css') }}>
+{% endblock %}
+{% block content %}
+<div class="index">
+    <header>
+	<div class="container">
+	  <nav class="nav"><img src="../static/imgs/logo.png" class="logo" alt="logo">
+	    <ul>
+		  <li><a href="/FAQ/">FAQ</a></li>
+		  <li><a href="/about-us/">Quienes somos</a></li>
+		  {% with messages = get_flashed_messages(category_filter=["username"]) %}
+		  <!--si hay mensajes-->
+		  {% if messages %}
+		  <!--ciclo for para recorrer toda la lista de mensajes-->
+		  {% for message in messages %}
+		  <li class="username">{{ message }}
+		  {% endfor %}
+		  {% endif %}
+		  {% endwith %}
+		  <ul class="submenu">
+			<li><a href="#" class="leave">Mi cuenta</a></li>
+			<li><a href="/client/" class="leave">Client Area</a></li>
+			<li><a href="/logout" class="leave">salir</a></li>
+		  </ul>
+		</li>
+	    </ul> 
+	  </nav>
+	</div>
+	</header>
+	<section class="wrapper">
+		<div class="transbox">
+		<div class="main">
+			<article>
+				<div class="text-align-center"><h2>Health & Evolution Center</h2></div>
+				<div class="text-align-justify">
+				<blockquote><br>
+					Nuestra empresa fue creada con el objetivo primordial de mantener a salvo a los trabajadores dentro de la industria, 
+					más específicamente a los que están en el frente dentro de las fábricas, pero, lo más complicado fue cuanto nos planteamos 
+					lo siguiente ¿Cómo podemos cumplir este objetivo?. Desde ese punto en adelante nuestro equipo de desarrolladores en 
+					ámbito de software, como hardware se planteó una meta, desarrollar de forma exitosa un producto que nos permita brindarle 
+					cierta tranquilidad a las personas que deben desarrollar su actividad laboral en un entorno industrial, allí apareció el “arco Sanitizante”, 
+					un elemento capaz de prevenir enfermedades potenciales en el marco del SARS COV-19, por medio de la desinfección y eliminación de patógenos 
+					presentes en los trabajadores al momento de ingresar y salir de su entorno laboral. También el poder establecer un mejor control sobre cada 
+					trabajador y su estado de salud, evitando así el contagio y la propagación de virus y enfermedades. Porque en H&E Center lo que más nos 
+					preocupa es el cuidado de las personas y sus familias
+				</blockquote>
+			</div>
+			</article>
+		</section>
+	</div>
+	</section>
+	<footer>
+		<p>Pie de pagina</p>
+	</footer>
+	</div>
+	{% endblock %}

@@ -1,0 +1,191 @@
+*{
+	margin: 0;
+	padding: 0;
+}
+body {
+    margin: 0;
+    padding: 0;
+    background: url(../imgs/bg.jpg) no-repeat center top;
+    /* 
+    linear-gradient: sirve para agregar un degrade de color
+    usamos "no-repeat" para que la imagen no se repita
+    y usamos "center" y "top" para que la imagen este centrada y arriba
+    */
+    background-size: cover;
+    font-family: sans-serif; /*cambiar la fuente*/
+    height: 100vh; /*tamano del 100% del tamanio de la pantalla*/ 
+    }
+    .container {
+        height: 10%;
+        /*80% del ancho*/
+        width: 100%;  
+        /*fondo transparente*/
+        background: transparent;
+        /*centramos*/
+        margin: auto;
+        box-sizing: border-box;
+        /*espaciado interno*/
+        padding: 1%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .nav {
+        height: 10%;
+        /*80% del ancho*/
+        width: 85%;  
+        /*centramos*/
+        margin: 30px auto;
+        box-sizing: border-box;
+        /*espaciado interno*/
+        padding: 0px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+    
+    .logo {
+        /*modificamos el tamaño del logo*/
+        width: 70px;
+        cursor: pointer;
+    }
+    /*dentro de la clase nav, seleccionamos a las listas y sus elementos*/
+    .nav ul li {
+        /*borramos el punto que aparece en cada elemento de la lista*/
+        list-style: none;
+        /*para que los elementos de la lista esten un al lado del otro*/
+        display: inline-block;
+        margin: 3    15px;
+        position: relative;
+    }
+    .nav > ul > li > a, .username {
+        /*le sacamos el aspecto azul a los elementos de la lista*/
+        text-decoration: none;
+        /*aplicamos color y cambiamos la fuente*/
+        display: inline-block;
+        margin: 10px 5px;
+        color: white;
+        font-family: Roboto, "sans-serif";
+        font-size: 1.2rem;
+    }
+    .leave {
+        text-decoration: none;
+        /*aplicamos color y cambiamos la fuente*/
+        color: rgb(94, 94, 94);
+        font-family: Roboto, "sans-serif";
+        font-size: 1rem;
+    }
+    .select {
+            content: "";
+            /*la linea empieza con un ancho de 0%*/
+            width: 100%;
+            background: rgb(235, 9, 9);
+            position: absolute;
+            /*colocamos la linea por debajo de los elementos*/
+            left: 0;
+            bottom: -12px;
+    }
+    /*creamos la linea*/
+    .nav > ul > li::before {
+        content: "";
+        height: 3px;
+        /*la linea empieza con un ancho de 0%*/
+        width: 0%;
+        background: rgb(235, 9, 9);
+        position: absolute;
+        /*colocamos la linea por debajo de los elementos*/
+        left: 0;
+        bottom: -12px;
+        /*agregamos un efecto de transicion para que la animacion sea fluida*/
+ 
+        transition: 0.4s ease-out;
+    }
+    /*accion que se ejecuta cuando coloquemos el mouse arriba*/
+    .nav ul li:hover::before {
+        /*la lineatermina con un ancho de 100%*/
+        width: 100%;
+    }
+
+    div.transbox {    
+        width: 35%;
+        height: 200px;
+        margin: 100px auto;
+        padding: 20px; 
+        background-color: transparent; 
+        /*para redondear los bordes*/
+        border-radius: 20px;
+      }
+    .main {
+    /*hacemos un recuadro*/
+    width: 35%;
+    height: 400px;
+    /*fondo negro*/
+    background: transparent;
+    /*letras blancas*/
+    background-color: transparent;
+    color: rgb(255, 255, 255);
+    /*lo centramos*/
+    margin: auto;
+    box-sizing: border-box;
+    /*espaciado interno*/  
+    padding-top: 50px;
+    padding-right: 50px;
+    padding-bottom: 20px;
+    padding-left: 50px;    
+    /*para que aparezca arriba de todo*/
+    position: absolute;
+    opacity: 1;
+    }
+    h2 span {
+        color: rgb(255, 0, 0);
+    }
+
+    .text-align-center {
+    text-align: center;
+    font-size: 1.5rem;
+    opacity: 1;
+    }
+
+    .aboutus {
+    background:rgba(107, 107, 107, 0.45); 
+    font-size: 1.2rem;
+    text-align: center;
+    width: 30%;
+    margin: auto;
+    border-radius: 20px;
+    border-style: solid;
+    border-color: rgba(0, 0, 0, 0.75);
+    padding: 12px; 
+    }
+
+    .aboutus:hover {
+    background:rgba(42, 42, 42, 0.75); 
+    color: rgb(255, 255, 255);
+    }
+
+    .aboutus {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+      }
+    .submenu{
+        position: absolute;
+        background: transparent;
+        width: 130%;
+        visibility: hidden;
+        opacity: 0;
+        transition: opacity 1.5s;
+    }
+    .submenu li a{
+        display: block;
+        padding: 5px;
+        color: #fff;
+    }
+    .nav li:hover .submenu{
+        visibility: visible;
+        opacity: 1;
+    }
+
+    

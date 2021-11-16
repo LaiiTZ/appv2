@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+{% from "_render_elements.html" import render_message %}
+<!--importamos la macro de renderizado de mensajes desde un archivo html-->
+{% block filecss %}
+<link rel="stylesheet" href={{ url_for('static', filename='css/index.css' ) }}>
+{% endblock %}
+{% block content %}
+<header>
+	<div class="container">
+		<nav class="nav">
+			<div class="logo"><a href="/"><img src="../static/imgs/logo.png" width="70" alt="logo"></a></div>
+			<ul>
+				<li><a href="/FAQ/" class="menu">FAQ</a></li>
+				<li><a href="/about-us/" class="menu">Quienes somos</a></li>
+				<li><a href="/login/" class="menu">Ingresar</a></li>
+			</ul>
+		</nav>
+	</div>
+</header>
+<section class="wrapper">
+	<div class="transbox">
+	<div class="main">
+		<article>
+			<div class="text-align-center"><h2>We Are <span>Health & Evolution Center</span></h2></div>
+			<br>
+			<label for="aboutus"><div class="aboutus"><a target="_blank" href="https://wa.me/+5493521405894?text=Me%20gustaria%20saber%20m%C3%A1s%20sobre%20el%20producto">Contact Us</a></div></label>
+		</div>
+		</article>
+	</section>
+</div>
+</section>
+<footer>
+	<p>Pie de pagina</p>
+</footer>
+</div>
+{% endblock %}

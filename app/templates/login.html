@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+{% from "_render_elements.html" import render_message %} <!--importamos la macro de renderizado de mensajes desde un archivo html-->
+{% block filecss %}
+<link rel="stylesheet" href={{ url_for('static', filename= 'css/login.css') }}>
+{% endblock %}
+{% block content %}
+<div class="login-box">
+<a href="/"><img src="../static/imgs/logo.png" class="logo" alt="logo"></a>
+<h1>Log In</h1>
+
+<ul class="msg">
+	{{ render_message("messages") }}
+</ul>
+
+<form method="post" action="{{ url_for('login') }}">
+	<label for="username">Username</label>
+	<input name="username" type="text" placeholder="Username" maxlength="15">
+	<label for="password">Password</label>
+	<input name="password" type="password" placeholder="Password">
+	<input type="submit" value="Log In">
+    <p class="a">¿No tienes una cuenta? <a href="/signup/" class="register-redirect">!Registrate!</a></p>
+</form>
+</div>
+{% endblock %}
