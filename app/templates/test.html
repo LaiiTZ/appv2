@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+{% from "_render_elements.html" import render_table, render_pgs %} <!--importamos la macro de renderizado de mensajes desde un archivo html-->
+{% block filecss %}
+<link rel="stylesheet" href={{ url_for('static', filename= 'css/login.css') }}>
+<link rel="stylesheet" href={{ url_for('static', filename= 'css/botones.css') }}>
+{% endblock %}
+{% block content %}
+<div class="login-box">
+<a href="/"><img src="../static/imgs/logo.png" class="logo" alt="logo"></a>
+<h1>Data</h1>
+{{ render_table("messages") }}
+<div class="flex">
+<form method="post" action="{{ url_for('search') }}">
+<button type="submit" name="boton" value="CMac" class="btn41-43 btn-43">Change MAC</button>
+</form>
+<form method="get" action="{{ url_for('search') }}">
+    {% with paginas = get_flashed_messages(category_filter=["paginas"]) %}
+        {% if paginas %}
+        <div class="select">
+        <select name="page"id="standard-select">
+            {% for message in paginas %}
+                    {% for msg in message %}
+                    <option value="{{ msg }}">{{ msg }}</option>
+                    {% endfor %}
+            {% endfor %}
+        </select>
+    </div>
+        <button type="submit"class="btn41-43 btn-43">Go</button>
+        {% endif %}
+
+    {% endwith %}  
+</form>
+</div>
+</div>
+{% endblock %}

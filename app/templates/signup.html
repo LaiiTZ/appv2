@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+{% from "_render_elements.html" import render_message %} <!--importamos la macro de renderizado de mensajes desde un archivo html-->
+{% block title %}
+Sign Up
+{% endblock %}
+{% block filecss %}
+<link rel="stylesheet" href={{ url_for('static', filename= 'css/signup.css') }}>
+{% endblock %}
+{% block content %}
+<div class="login-box">
+<a href="/"><img src="../static/imgs/logo.png" class="logo" alt="logo"></a>
+<h1>Sign Up</h1>
+	<!--ejecutamos la macro para mostrar los mensajes-->
+	{{ render_message("messages") }}
+<form method="post" action="{{ url_for('signup') }}">
+	<label for="username">Username</label>
+	<input name="username" type="text" placeholder="Username" maxlength="15">
+	<label for="password">Password</label>
+	<input name="password" type="password" placeholder="Password">
+	<label for="password">Repeat password</label>
+	<input name="password2" type="password" placeholder="Repeat password">
+	<input type="submit" value="Sign Up">
+	<p class="a">¿Ya tienes una cuenta? <a href="/login/" class="register-redirect">Ingresa aqui!</a></p>
+</form>
+</div>
+{% endblock %}
